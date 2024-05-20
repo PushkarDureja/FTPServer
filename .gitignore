@@ -1,7 +1,6 @@
 # Prerequisites
 *.d
 .vs/
-src/
 x64/
 
 # Compiled Object files
