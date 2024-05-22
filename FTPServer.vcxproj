@@ -29,8 +29,11 @@
     <ClInclude Include="include\Session.h" />
     <ClInclude Include="include\UserCommand.h" />
     <ClInclude Include="include\OptionCommand.h" />
+    <ClInclude Include="include\User.h" />
+    <ClInclude Include="include\commands\PassCommand.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\commands\PassCommand.cpp" />
     <ClCompile Include="src\OptionCommand.cpp" />
     <ClCompile Include="src\UserCommand.cpp" />
     <ClCompile Include="src\Session.cpp" />
@@ -40,6 +43,7 @@
     <ClCompile Include="src\NetworkStream.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\TcpServer.cpp" />
+    <ClCompile Include="src\User.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

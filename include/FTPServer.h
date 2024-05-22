@@ -3,13 +3,19 @@
 
 #include "TcpServer.h"
 #include "Session.h"
+#include "User.h"
 #include <thread>
-class FTPServer
+#include <unordered_map>
+
+class Session;
+
+class FTPServer:public std::enable_shared_from_this<FTPServer>
 {
 private:
 	int _port;
 	TcpServer _tcpServer;
 	std::vector<std::shared_ptr<Session>> sessions;
+	std::unordered_map<std::string, std::shared_ptr<User>> _users; 
 
 	std::thread acceptClientThread;
 	void AcceptClientAsync();
@@ -20,6 +26,12 @@ public:
 
 	void Start();
 	void Stop();
+	bool AddUser(std::string username, std::string password);
+
+	//getters
+	unordered_map<string, shared_ptr<User>> GetUsers();
+	shared_ptr<User> GetUser(string username);
 };
 
 #endif
+	

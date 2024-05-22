@@ -4,9 +4,10 @@
 using namespace std;
 
 int main() {
-	FTPServer server;
-	server.Start();
-	
+	std::shared_ptr<FTPServer> server = std::make_shared<FTPServer>();
+	server->AddUser("user", "zxcv");
+	server->Start();
+
 	int x;
 	cin >> x;
 }
