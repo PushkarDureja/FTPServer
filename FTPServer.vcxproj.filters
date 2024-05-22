@@ -51,6 +51,15 @@
     <ClInclude Include="include\commands\PassCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\commands\CommandHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commands\OptionCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commands\UserCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\TcpServer.cpp">
@@ -74,16 +83,16 @@
     <ClCompile Include="src\Session.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\UserCommand.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\OptionCommand.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\User.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\commands\PassCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\OptionCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\UserCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

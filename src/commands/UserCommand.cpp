@@ -1,4 +1,4 @@
-#include "UserCommand.h"
+#include "commands/UserCommand.h"
 
 void UserCommand::Handle(std::shared_ptr<Session> session, const string& args) {
 	unordered_map<string,shared_ptr<User>> map = session->GetServer()->GetUsers();
