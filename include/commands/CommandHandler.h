@@ -13,6 +13,10 @@ public:
 
 	virtual ~CommandHandler() {}
 	virtual void Handle(std::shared_ptr<Session>, const std::string& args) = 0;
+
+	bool isAuthenticated(std::shared_ptr<Session> session) {
+		return session->GetUser() != nullptr && session->GetAuthState();
+	}
 };
 
 #endif

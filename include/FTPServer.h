@@ -30,7 +30,6 @@ public:
 
 	//getters
 	unordered_map<string, shared_ptr<User>> GetUsers();
-	shared_ptr<User> GetUser(string username);
 };
 
 #endif

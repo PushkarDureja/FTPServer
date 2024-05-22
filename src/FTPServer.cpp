@@ -35,10 +35,6 @@ unordered_map<string, shared_ptr<User>> FTPServer::GetUsers() {
 	return _users;
 }
 
-shared_ptr<User> FTPServer::GetUser(string username) {
-	return _users[username];
-}
-
 void FTPServer::AcceptClientAsync() {
 	while (true) {
 		SOCKET client = _tcpServer.Accept();
