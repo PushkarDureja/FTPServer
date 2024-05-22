@@ -36,6 +36,7 @@
     <ClInclude Include="include\commands\PassCommand.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\commands\CommandHandler.cpp" />
     <ClCompile Include="src\commands\OptionCommand.cpp" />
     <ClCompile Include="src\commands\PassCommand.cpp" />
     <ClCompile Include="src\commands\UserCommand.cpp" />
