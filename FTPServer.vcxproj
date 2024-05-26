@@ -21,7 +21,9 @@
   <ItemGroup>
     <ClInclude Include="include\CommandHandler.h" />
     <ClInclude Include="include\commands\CommandHandler.h" />
+    <ClInclude Include="include\commands\NamelistCommand.h" />
     <ClInclude Include="include\commands\OptionCommand.h" />
+    <ClInclude Include="include\commands\PortCommand.h" />
     <ClInclude Include="include\commands\UserCommand.h" />
     <ClInclude Include="include\FTPServer.h" />
     <ClInclude Include="include\BinaryWriter.h" />
@@ -34,11 +36,16 @@
     <ClInclude Include="include\OptionCommand.h" />
     <ClInclude Include="include\User.h" />
     <ClInclude Include="include\commands\PassCommand.h" />
+    <ClInclude Include="include\TcpClient.h" />
+    <ClInclude Include="include\commands\PassiveCommand.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\commands\NamelistCommand.cpp" />
+    <ClCompile Include="src\commands\PassiveCommand.cpp" />
     <ClCompile Include="src\commands\CommandHandler.cpp" />
     <ClCompile Include="src\commands\OptionCommand.cpp" />
     <ClCompile Include="src\commands\PassCommand.cpp" />
+    <ClCompile Include="src\commands\PortCommand.cpp" />
     <ClCompile Include="src\commands\UserCommand.cpp" />
     <ClCompile Include="src\Session.cpp" />
     <ClCompile Include="src\FTPServer.cpp" />
@@ -48,6 +55,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\TcpServer.cpp" />
     <ClCompile Include="src\User.cpp" />
+    <ClCompile Include="src\TcpClient.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
