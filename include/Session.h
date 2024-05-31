@@ -30,6 +30,7 @@ private:
 	std::shared_ptr<User> _user;
 	bool _isAuthenticated = false;
 
+	std::string _workingDirectory = "";
 	std::shared_ptr<TcpServer> _passiveDataServer;
 	std::shared_ptr<TcpClient> _activeDataClient;
 	SOCKET _dataConnectionSock = 0;
@@ -37,9 +38,7 @@ private:
 
 	void AcceptDataServerClient();
 
-
 public:
-
 	Session(std::shared_ptr<NetworkStream>  stream, std::shared_ptr<FTPServer> server);
 	void StartReadingAsync();
 	void SendResponse(std::string responseString);
@@ -53,10 +52,12 @@ public:
 	std::shared_ptr<FTPServer> GetServer();
 	bool GetAuthState();
 	SOCKET GetDataSocket();
+	std::string GetWorkingDirectory();
 
 	//setter
 	void SetUser(std::shared_ptr<User> user);
 	void SetAuthState(bool state);
+	void SetWorkingDirectory(std::string workingDirectory);
 };
 
 #endif

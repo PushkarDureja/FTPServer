@@ -26,7 +26,7 @@ public:
 
 	void Start();
 	void Stop();
-	bool AddUser(std::string username, std::string password);
+	bool AddUser(std::string username, std::string password, std::string baseDirectoryPath);
 
 	//getters
 	unordered_map<string, shared_ptr<User>> GetUsers();

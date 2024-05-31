@@ -6,6 +6,7 @@
 #include "commands/PassiveCommand.h"
 #include "commands/PortCommand.h"
 #include "commands/NamelistCommand.h"
+#include "commands/CwdCommand.h"
 #include "FTPServer.h"
 #include <iostream>
 #include <sstream>
@@ -20,6 +21,7 @@ Session::Session(std::shared_ptr<NetworkStream> stream, std::shared_ptr<FTPServe
 	_commandHandlers.insert({ "PASV",std::make_unique<PassiveCommand>() });
 	_commandHandlers.insert({ "PORT",std::make_unique<PortCommand>() });
 	_commandHandlers.insert({ "NLST",std::make_unique<NamelistCommand>() });
+	_commandHandlers.insert({ "CWD",std::make_unique<CwdCommand>() });
 };
 
 void Session::StartReadingAsync() {
@@ -177,10 +179,18 @@ SOCKET Session::GetDataSocket() {
 	return  _dataConnectionSock;
 }
 
+string Session::GetWorkingDirectory() {
+	return _workingDirectory;
+}
+
 void Session::SetUser(shared_ptr<User> user) {
 	_user = move(user);
 }
 
 void Session::SetAuthState(bool state) {
 	_isAuthenticated = state;
+}
+
+void Session::SetWorkingDirectory(string workingDirectory) {
+	_workingDirectory = workingDirectory;
 }

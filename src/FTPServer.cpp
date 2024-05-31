@@ -22,8 +22,8 @@ void FTPServer::Stop() {
 	_tcpServer.Stop();
 }
 
-bool FTPServer::AddUser(string username, string password) {
-	auto user = std::make_shared<User>(username, password);
+bool FTPServer::AddUser(string username, string password, string baseDirectoryPath) {
+	auto user = std::make_shared<User>(username, password, baseDirectoryPath);
 	if (_users.find(username) == _users.end()) {
 		_users.insert({ username, user });
 		return true;

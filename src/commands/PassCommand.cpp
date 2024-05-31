@@ -14,5 +14,6 @@ void PassCommand::Handle(std::shared_ptr<Session> session, const string& args) {
 	}
 
 	session->SetAuthState(true);
+	session->SetWorkingDirectory(user->GetBaseDirectoryPath());
 	session->SendResponse("230 User logged in, proceed.");
 }

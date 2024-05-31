@@ -1,6 +1,7 @@
 #include "commands/NamelistCommand.h"
 #include <memory>
 #include <BinaryWriter.h>
+#include <FileSystem.h>
 
 void NamelistCommand::Handle(std::shared_ptr<Session> session, const string& args) {
 	if (!isAuthenticated(session)) {
@@ -18,9 +19,11 @@ void NamelistCommand::Handle(std::shared_ptr<Session> session, const string& arg
 	std::shared_ptr<NetworkStream> stream = std::make_shared<NetworkStream>(dataSocket);
 	std::shared_ptr<BinaryWriter> writer = std::make_shared<BinaryWriter>(stream);
 
-	// do file operations here
-	int written = writer->WriteString("abc\r\n");
-	written = writer->WriteString("def\r\n");
+	vector<string> listing = FileSystem::GetDirectoryListing(args.length() < 1 ? session->GetWorkingDirectory() : args);
+	for (string listingName : listing)
+	{
+		writer->WriteString(listingName + "\r\n");
+	}
 
 	session->SendResponse("226 Operation successful");
 	session->CloseDataConnection();
