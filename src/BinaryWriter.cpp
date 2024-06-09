@@ -30,6 +30,10 @@ int BinaryWriter::WriteString(string val) {
 	return _stream->Write(inputBuff, 0, val.length());
 }
 
+int BinaryWriter::Write(vector<char>& buffer, int offset, int count) {
+	return _stream->Write(buffer, offset, count);
+}
+
 template<typename T>
 void BinaryWriter::pushToByteVector(T value, std::vector<char>& byteVector) {
 	static_assert(std::is_integral<T>::value, "Only integral types are supported");

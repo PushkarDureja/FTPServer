@@ -40,8 +40,10 @@
     <ClInclude Include="include\commands\PassCommand.h" />
     <ClInclude Include="include\TcpClient.h" />
     <ClInclude Include="include\commands\PassiveCommand.h" />
+    <ClInclude Include="include\commands\RetrieveCommand.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\commands\RetrieveCommand.cpp" />
     <ClCompile Include="src\commands\CwdCommand.cpp" />
     <ClCompile Include="src\FileSystem.cpp" />
     <ClCompile Include="src\commands\NamelistCommand.cpp" />

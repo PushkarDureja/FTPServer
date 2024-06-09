@@ -5,6 +5,7 @@
 #include <type_traits>
 #include <memory>
 #include <string>
+#include <vector>
 
 class BinaryWriter {
 public:
@@ -14,6 +15,7 @@ public:
 	int WriteInt16(int16_t val);
 	int WriteInt32(int32_t val);
 	int WriteString(std::string val);
+	int Write(std::vector<char>& buffer, int offset, int count);
 
 private:
 	std::shared_ptr<Stream> _stream;

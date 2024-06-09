@@ -78,6 +78,9 @@
     <ClInclude Include="include\commands\CwdCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\commands\RetrieveCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\TcpServer.cpp">
@@ -132,6 +135,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\commands\CwdCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\RetrieveCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

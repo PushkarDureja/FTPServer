@@ -3,6 +3,11 @@
 
 void CwdCommand::Handle(std::shared_ptr<Session> session, const string& args) {
 
+	if (!isAuthenticated(session)) {
+		session->SendResponse("530 Not logged in.");
+		return;
+	}
+
 	string resolvedPath = FileSystem::GetCombinedPath(session->GetWorkingDirectory(), args);
 	resolvedPath = FileSystem::SanitizePath(resolvedPath);
 

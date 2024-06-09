@@ -7,6 +7,7 @@
 #include "commands/PortCommand.h"
 #include "commands/NamelistCommand.h"
 #include "commands/CwdCommand.h"
+#include "commands/RetrieveCommand.h"
 #include "FTPServer.h"
 #include <iostream>
 #include <sstream>
@@ -22,6 +23,7 @@ Session::Session(std::shared_ptr<NetworkStream> stream, std::shared_ptr<FTPServe
 	_commandHandlers.insert({ "PORT",std::make_unique<PortCommand>() });
 	_commandHandlers.insert({ "NLST",std::make_unique<NamelistCommand>() });
 	_commandHandlers.insert({ "CWD",std::make_unique<CwdCommand>() });
+	_commandHandlers.insert({ "RETR",std::make_unique<RetreiveCommand>() });
 };
 
 void Session::StartReadingAsync() {
